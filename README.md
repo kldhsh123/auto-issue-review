@@ -238,13 +238,15 @@ concurrency:
 
 jobs:
   check-issue:
+    if: ${{ github.event.issue.pull_request == null }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Review issue
-        uses: OWNER/auto-issue-review@v1
+      - name: Check issue template compliance
+        uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           config-path: .github/issue-ai-checker.json

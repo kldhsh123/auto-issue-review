@@ -238,13 +238,15 @@ concurrency:
 
 jobs:
   check-issue:
+    if: ${{ github.event.issue.pull_request == null }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Review issue
-        uses: OWNER/auto-issue-review@v1
+      - name: Check issue template compliance
+        uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           config-path: .github/issue-ai-checker.json
@@ -279,7 +281,7 @@ jobs:
 当前内置语言：
 
 - `en`
-- `zh` / `zh-CN` / `zh-TW`
+- `zh` / `zh-CN` 
 
 贡献新语言时，复制 `.github/review-issue/locales/en.json` 为新文件，例如 `.github/review-issue/locales/ja.json`，翻译其中的值，然后设置：
 
