@@ -1,6 +1,6 @@
 name: auto-issue-review
 author: kldhsh123
-description: AI-powered GitHub issue template reviewer with multi-template matching, relabeling, closing, reopen checks, and manual override.
+description: AI-powered GitHub issue template reviewer
 
 branding:
   icon: check-circle
