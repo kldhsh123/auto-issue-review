@@ -4,6 +4,8 @@ AI-powered GitHub issue template review for repositories that want cleaner issue
 
 [中文文档](docs/README.zh-CN.md)
 
+Friendship links: [linux.do](https://linux.do/)
+
 ## What This Project Is
 
 `auto-issue-review` is a GitHub Action that reviews newly opened or reopened issues with an OpenAI-compatible model.
